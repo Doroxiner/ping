@@ -1,1 +1,29 @@
+from random import *
+from time import time as timer
+from pygame import *
+class Game_sprite(sprite.Sprite):
+    def __init__ (self, img, x, y, w, h, speed):
+        super().__init__()
+        self.image = transform.scale(image.load(img), (w, h))
+        self.rect = self.image.get_rect()
+        self.rect.x = x
+        self.rect.y = y
+        self.speed = speed
+    def reset(self):
+        win.blit(self.image, (self.rect.x, self.rect.y))
+
+back = (234,34,23)
+win_h = 400
+win_w = 800
+win = display.set_mode((win_w,win_h))
+
+game = True
+clock = time.Clock()
+while game:
+    win.fill(back)
+    for e in event.get():
+        if e.type == QUIT:
+            game = False
+        display.update()
+        clock.tick(60)
 
