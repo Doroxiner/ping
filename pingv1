@@ -66,12 +66,12 @@ while game:
         if ball.rect.y > win_h or ball.rect.y<0:
             speed_y *= -1
 
-    if ball.rect.x < 0:
-        finish = True
-        win.blit(text1<(250,200))
-    if ball.rect.x > win_w:
-        finish = True
-        win.blit(text2,(250,200))
+        if ball.rect.x < 0:
+            finish = True
+            win.blit(text1,(250,200))
+        if ball.rect.x > win_w:
+            finish = True
+            win.blit(text2,(250,200))
     
         platform1.reset()
         platform2.reset()
